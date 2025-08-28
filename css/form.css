@@ -1,0 +1,75 @@
+/* 全体のスタイルを統一 */
+* {
+    box-sizing: border-box; /* これで padding, border を含めたサイズ計算をする */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* フォームのタイトル */
+h2 {
+    margin-top: 50px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* フォーム全体のスタイル */
+form {
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* ラベルのスタイル */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* 入力欄のスタイル */
+input, textarea {
+    width: 100%; /* box-sizingが適用されるので、paddingやborder込みで100%に収まる */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* テキストエリアの高さを調整 */
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+/* 送信ボタンのスタイル */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ホバー時のボタンスタイル */
+button:hover {
+    background-color: #218838;
+}
