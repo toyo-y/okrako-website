@@ -1,0 +1,816 @@
+/* ベース */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: #2F3053;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+/* ヘッダー */
+.header-container {
+  background: #2F3053;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li a {
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* メインビジュアル */
+.main-visual {
+  background: url('images/visual.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.visual-text h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #2F3053;
+  color: #fff;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* 各セクション */
+section {
+  padding: 40px 0;
+}
+
+.facility-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 calc(50% - 20px);
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* フッター */
+footer {
+  background: #2F3053;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #2F3053;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .facility-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .visual-text h2 {
+    font-size: 1.6em;
+  }
+  
+  .slide-text {
+    padding: 15px;
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .slide-text h2 {
+    font-size: 0.9em;
+  }
+
+  .slide-text p {
+    font-size: 0.75em;
+  }
+
+  .slide img {
+    height: 500px;
+  }
+
+  .greeting-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .facility-slideshow {
+    height: auto;
+  }
+
+  .facility-slideshow .slide img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .facility-slideshow .slide-text {
+    width: 95%;
+    max-width: 95%;
+    padding: 12px;
+    font-size: 0.9em;
+    top: 60%;
+  }
+}
+
+/* スライドショー */
+.slideshow-container {
+  position: relative;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  vertical-align: middle;
+  object-fit: cover;
+  height: 500px;
+}
+
+.slide-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 90%;
+  text-align: center;
+}
+
+.slide-text h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.slide-text p {
+  font-size: 1.1em;
+}
+
+.fade {
+  animation: fadeEffect 3s; /* ←エフェクトのスピードを変えれる */
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4 }
+  to { opacity: 1 }
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .slide-text {
+    padding: 15px;
+    max-width: 98%;
+  }
+
+  .slide-text h2 {
+    font-size: 1.2em;
+  }
+
+  .slide-text p {
+    font-size: 0.8em;
+  }
+
+  .slide img {
+    height: 500px;
+  }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+}
+
+.main-visual {
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+section .container {
+  text-align: center;
+}
+
+/* 施設長メッセージセクション */
+/* 「施設長からのメッセージ」セクション全体のスタイル */
+.message-section {
+  padding: 40px 0;
+}
+
+.greeting-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; /* Updated to center the content */
+  gap: 30px;
+}
+
+.greeting-photo {
+  flex: 1 1 40%;
+  max-width: 400px;
+}
+
+.greeting-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.greeting-message {
+  flex: 1 1 55%;
+  min-width: 280px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .greeting-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .greeting-message {
+    text-align: center;
+  }
+}
+
+/* TOPページ会社ロゴ（スライドショーの下部）のサイズ変更 */
+.intro-logo {
+  max-width: 330px;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+/* TOPページおけらこ紹介文 両端揃え */
+.intro-text {
+  text-align: justify;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* 代表挨拶文 両端揃え */
+.greeting-message p {
+  text-align: justify;
+}
+/* ヘッダーロゴ画像サイズ調整 */
+.logo-image {
+  max-height: 30px;
+  height: auto;
+  width: auto;
+  margin-top: 8px;     /* 上に少し余白 */
+  margin-bottom: 2px;  /* 下にも余白 */
+  padding: 0;
+  vertical-align: middle;
+}
+
+/* TOPスライドショー画像の上下位置をピクセル単位で微調整 */
+.slide-img-top-1 {
+  object-position: center -100px;
+}
+
+.slide-img-top-2 {
+  object-position: center -200px;
+}
+
+.slide-img-top-3 {
+  object-position: center -60px;
+}
+
+.slide-img-top-4 {
+  object-position: center 40px;
+}
+
+.slide-img-top-5 {
+  object-position: center 50px;
+}
+
+
+/* 施設紹介スライドショー（中央寄せ＆サイズ調整） */
+.facility-slideshow {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.facility-slideshow .slide img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.facility-slideshow .slide-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 90%;
+  text-align: center;
+}
+
+/*h3見出しのサイズ変更*/
+h3 {
+  font-size: 2.4em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/*h3見出しのサイズ変更*/
+h4 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* スマホ表示時：TOPスライドショー画像位置補正 */
+@media (max-width: 768px) {
+  .slide-img-top-1 {
+  object-position: center 40px;
+}
+
+.slide-img-top-2 {
+  object-position: center 40px;
+}
+
+.slide-img-top-3 {
+  object-position: center 40px;
+}
+
+.slide-img-top-4 {
+  object-position: center 40px;
+}
+
+.slide-img-top-5 {
+  object-position: center 50px;
+  }
+}
+/* スマホ表示時：TOPスライドショーの高さ調整 */
+@media (max-width: 768px) {
+  .slideshow-container {
+    height: 360px;
+  }
+
+  .facility-slideshow {
+    height: 360px;
+  }
+
+  .slide img {
+    height: 360px;
+  }
+
+  .facility-slideshow .slide img {
+    height: 360px;
+  }
+}
+/* 施設紹介カードの装飾 */
+.facility-card {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .facility-card {
+    text-align: center;
+  }
+}
+
+/* 入居条件 左揃え */
+.info-section-2 {
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* 入居条件 左揃え */
+.info-section-3 {
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.1em;
+  color: #333;
+}
+
+
+/* flow-step and flow-arrow styles */
+.flow-arrow {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.flow-arrow img {
+  display: inline-block;
+  max-width: 75px;
+  height: auto;
+}
+
+.flow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.flow-step-icon {
+  max-width: 65px !important;
+  height: auto !important;
+}
+
+.flow-step-text {
+  flex: 1;
+}
+
+/* 入居条件・入居までの流れ・会社情報 見出し中央寄せ */
+.info-section-2 h3,
+.info-section-3 h3 {
+  text-align: center;
+}
+
+/* 全体のスタイルを統一 */
+* {
+    box-sizing: border-box; /* これで padding, border を含めたサイズ計算をする */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* 会社情報セクションの上に余白を追加 */
+.company-section {
+  padding-top: 40px;
+  margin-top: 0;
+}
+/* 会社情報テーブル 洗練デザイン */
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+}
+
+.company-table th,
+.company-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.company-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+}
+
+.company-table th,
+.company-table td {
+  padding: 10px 20px;
+  line-height: 1.6;
+  height: 60px;
+}
+
+.company-table a {
+  color: #1a0dab;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .company-table {
+    font-size: 15px;
+  }
+
+  .company-table th,
+  .company-table td {
+    padding: 8px 12px;
+    height: auto;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .company-table tr {
+    display: block;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .company-table th {
+    background-color: transparent;
+    font-weight: bold;
+    border-bottom: none;
+  }
+}
+/* Google Map埋め込み中央揃え */
+.map-embed {
+  display: block;
+  margin: 0 auto 30px; /* 中央揃えと下の余白 */
+  width: 100%;
+  height: 300px;
+  max-width: 100%;
+  border: 0;
+}
+
+/* スマホ表示用 */
+@media (max-width: 768px) {
+  .map-embed {
+    height: 250px;
+  }
+}
+
+
+
+/* 採用情報テーブル（洗練デザイン） */
+.recruit-table {
+  width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 15px;
+  color: #333;
+  background-color: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recruit-table th,
+.recruit-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.recruit-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .recruit-table {
+    font-size: 15px;
+    width: 360px;
+    margin: 0 auto;
+  }
+
+  .recruit-table th,
+  .recruit-table td {
+    padding: 8px 12px;
+    height: auto;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .recruit-table tr {
+    display: block;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .recruit-table th {
+    background-color: transparent;
+    font-weight: bold;
+    border-bottom: none;
+  }
+}
+/* 「施設長からのメッセージ」セクション全体のスタイル */
+.message-section {
+  padding: 40px 0;
+}
+
+/* メッセージと写真を横並びに配置するコンテナ（レスポンシブ対応） */
+  .message-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+/* 右側の施設長写真部分 */
+  .message-photo {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .message-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+/* 左側のテキスト（施設長からのメッセージ）部分 */
+  .message-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.05em;
+    line-height: 1.5;
+  }
+
+/* スマホ表示時の「施設長からのメッセージ」セクションのスタイル調整 */
+@media (max-width: 768px) {
+  .message-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .message-text {
+    text-align: center;
+  }
+
+  .message-photo {
+    justify-content: center;
+  }
+}
+
+.message-name {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 1em;
+  color: #333;
+}
+.about-section {
+  padding: 40px 0;
+}
+
+/* セクション内のレイアウト調整 */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* 文章部分（左側） */
+.about-text {
+  flex: 1;
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+
+/* 画像部分（右側） */
+.about-photo {
+  flex: 0 0 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-photo img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* スマホ表示時の調整 */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-photo img {
+    width: 80%;
+    height: auto;
+  }
+}
