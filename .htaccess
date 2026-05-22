@@ -1,0 +1,6 @@
+# Xserver nginxキャッシュ設定（既存設定を踏襲）
+SetEnvIf Request_URI ".*" Ngx_Cache_NoCacheMode=off
+SetEnvIf Request_URI ".*" Ngx_Cache_AllCacheMode
+
+# 静的サイト用設定：index.html を最優先で配信
+DirectoryIndex index.html index.php

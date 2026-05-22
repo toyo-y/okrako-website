@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // コピーライトの年を現在の年に自動更新（毎年自動で切り替わる）
+  const currentYear = new Date().getFullYear();
+  document.querySelectorAll(".copyright-year").forEach(function (el) {
+    el.textContent = currentYear;
+  });
+
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("nav-menu");
 
