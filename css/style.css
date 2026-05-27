@@ -814,3 +814,50 @@ body {
     height: auto;
   }
 }
+
+/* ============================================================
+   スマホ表示の余白・サイズ調整（2026-05-27 上司指摘対応）
+   ・左右余白の不統一を解消（一部セクションが画面端にベタ付きだった）
+   ・採用ページ写真の右はみ出しを解消
+   ・見出しサイズをスマホ向けに調整
+   ※ すべて max-width:768px のスマホ表示のみ。PC表示には影響しない。
+   ============================================================ */
+@media (max-width: 768px) {
+  /* .container を使わないセクションにも左右20pxの余白を付け、全ページで統一 */
+  .info-section-2,
+  .info-section-3,
+  .message-section,
+  .message-section2,
+  .about-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* 採用ページ「おけらこについて」の写真が画面外へはみ出すのを防止 */
+  .about-photo {
+    flex: 0 0 auto;
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* 募集要項テーブルの固定幅(360px)をやめ、画面幅に追従させる */
+  .recruit-table {
+    width: 100%;
+  }
+
+  /* 見出しがスマホで大きすぎたため調整 */
+  h3 {
+    font-size: 1.8em;
+  }
+
+  h4 {
+    font-size: 1.3em;
+  }
+
+  /* ホーム：ヒーロー画像とロゴの間が空きすぎていたため余白を詰める */
+  .intro {
+    padding-top: 10px;
+  }
+}
