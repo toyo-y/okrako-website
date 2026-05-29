@@ -195,7 +195,7 @@ footer a {
 /* スライドショー */
 .slideshow-container {
   position: relative;
-  max-height: 500px;
+  max-height: 700px;
   overflow: hidden;
 }
 
